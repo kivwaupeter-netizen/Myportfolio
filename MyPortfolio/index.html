@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GITHUB Myportfolio</title>
+
+<!-- SEO + META -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Phantom Tech Solutions - Professional web development, design and tech solutions.">
+<meta name="keywords" content="web developer, portfolio, Phantom Tech Solutions, frontend developer">
+<meta name="author" content="Phantom Tech Solutions">
+
+<!-- Open Graph (Social Sharing) -->
+<meta property="og:title" content="Phantom Tech Solutions Portfolio">
+<meta property="og:description" content="Professional web developer portfolio showcasing projects and skills">
+<meta property="og:image" content="images/preview.png">
+<meta property="og:type" content="website">
+
+<title>Phantom Tech Solutions</title>
+
+<!-- Favicon -->
+<link rel="icon" href="images/favicon.png">
+
+<!-- Styles -->
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</head>
+
+<body>
+
+<!-- PRELOADER -->
+<div id="preloader" aria-hidden="true">
+  <div class="loader"></div>
+</div>
+
+<!-- NAVBAR -->
+<header>
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="logo">Phantom Tech Solutions</div>
+
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <button id="themeToggle" title="Toggle Dark/Light Mode" aria-label="Toggle Dark or Light mode">🌙</button>
+
+    <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section id="home" class="section hero" data-parallax-speed="0.5" role="banner">
+    <h1 id="hero-text"></h1>
+    <p>We create professional websites, apps, and digital solutions.</p>
+    <a href="#projects" class="btn" title="View our projects">View My Work</a>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section about">
+    <h2>About Us</h2>
+    <p>
+        Phantom Tech Solutions designs and builds modern, responsive, and user-friendly digital products.
+        We focus on clean code, performance, UI/UX, and scalable systems for businesses and individuals.
+    </p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section skills">
+    <h2>Our Skills</h2>
+
+    <div class="skill">
+        <span>HTML</span>
+        <div class="bar">
+            <div class="progress" data-percent="100"><span>100%</span></div>
+        </div>
+    </div>
+
+    <div class="skill">
+        <span>CSS</span>
+        <div class="bar">
+            <div class="progress" data-percent="100"><span>100%</span></div>
+        </div>
+    </div>
+
+    <div class="skill">
+        <span>JavaScript</span>
+        <div class="bar">
+            <div class="progress" data-percent="100"><span>100%</span></div>
+        </div>
+    </div>
+
+    <div class="skill">
+        <span>UI/UX Design</span>
+        <div class="bar">
+            <div class="progress" data-percent="100"><span>100%</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section projects">
+    <h2>Projects</h2>
+
+    <div class="project-grid">
+
+        <div class="project-card" role="button" tabindex="0"
+            data-title="AI Dashboard"
+            data-desc="Real-time AI analytics dashboard with data visualization."
+            data-image="https://images.unsplash.com/photo-1518770660439-4636190af475"
+            aria-label="Open AI Dashboard project">
+
+            <div class="overlay">View Details</div>
+            <h3>AI Dashboard</h3>
+            <p>Real-time AI analytics dashboard with data visualization.</p>
+        </div>
+
+        <div class="project-card" role="button" tabindex="0"
+            data-title="E-Commerce Platform"
+            data-desc="Secure online store with payments and product filtering."
+            data-image="https://images.unsplash.com/photo-1526378722484-bd91ca387e72"
+            aria-label="Open E-Commerce project">
+
+            <div class="overlay">View Details</div>
+            <h3>E-Commerce Platform</h3>
+            <p>Secure online store with payments and product filtering.</p>
+        </div>
+
+        <div class="project-card" role="button" tabindex="0"
+            data-title="Smart Home App"
+            data-desc="IoT app for controlling smart home devices remotely."
+            data-image="https://images.unsplash.com/photo-1504384308090-c894fdcc538d"
+            aria-label="Open Smart Home project">
+
+            <div class="overlay">View Details</div>
+            <h3>Smart Home App</h3>
+            <p>IoT app for controlling smart home devices remotely.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- PROJECT MODAL -->
+<div id="project-modal" class="modal hidden" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-content">
+        <button class="modal-close" aria-label="Close project modal">&times;</button>
+        <img src="" alt="Project preview image" class="modal-image" loading="lazy">
+        <h3 class="modal-title"></h3>
+        <p class="modal-desc"></p>
+    </div>
+</div>
+
+<!-- GALLERY -->
+<section id="gallery" class="section gallery">
+    <h2>Gallery</h2>
+
+    <div class="gallery-grid">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" alt="Team working on technology project" class="gallery-item" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72" alt="Coding on laptop" class="gallery-item" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="User interface design on tablet" class="gallery-item" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="Smart home connected devices" class="gallery-item" loading="lazy">
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section contact">
+    <h2>Contact Us</h2>
+
+    <form id="contact-form">
+        <input type="text" name="user_name" placeholder="Your Name" required aria-label="Your Name">
+        <input type="email" name="user_email" placeholder="Your Email" required aria-label="Your Email">
+        <textarea name="message" placeholder="Your Message" required aria-label="Your Message"></textarea>
+
+        <button type="submit" class="btn">Send Message</button>
+        <p class="form-feedback" aria-live="polite"></p>
+    </form>
+</section>
+
+</main>
+
+<!-- BACK TO TOP -->
+<button id="topBtn" aria-label="Back to top">↑</button>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/254700000000" class="whatsapp" target="_blank" aria-label="Chat with us on WhatsApp">
+💬
+</a>
+
+<!-- FOOTER -->
+<footer class="footer">
+    © 2026 Phantom Tech Solutions. All rights reserved.
+</footer>
+
+<!-- SCRIPT -->
+<script src="script.js"></script>
+
+</body>
+</html>
